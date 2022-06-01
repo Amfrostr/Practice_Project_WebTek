@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="application/javascript">
+        function sendRequest() {
+            $.get("https://web-tek.ninja/php_backend/delayed_dice.php", function(data) {
+
+                //Creates a new paragraph and appends it
+                $("#diceResultHolder").append("<p></p>")
+
+                //Changes html data of every paragraph to the data received
+                $("p").html(data)
+            //specifies json format
+            }, "json")
+        }
+    </script>
+</head>
+<body>
+<button type="button" onclick="sendRequest()">Click me</button>
+<div id="diceResultHolder">You rolled: </div>
+</body>
+</html>

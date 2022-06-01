@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function hello(firstname, lastname = "Norris") {
+            console.log("Hello " + firstname + " " + lastname)
+        }
+        function includesChars(s, c) {
+            if(s.includes(c)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        function countA(s) {
+            countChars(s, "A")
+        }
+        function countChars(s, c) {
+            let count = 0;
+            for (let position = 0; position < s.length; position++)
+            {
+                if (s.charAt(position) === c)
+                {
+                    count += 1;
+                }
+            }
+            console.log(count)
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

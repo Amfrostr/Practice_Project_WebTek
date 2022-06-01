@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function squareRoot() {
+            console.log(42)
+        }
+        function helloNumber() {
+            let count = 0;
+            setInterval(increment, 1000)
+
+            function increment() {
+                console.log(count)
+                count++
+            }
+        }
+        function buttonClicked() {
+            console.log("The first button is clicked")
+        }
+        function secondButtonClicked() {
+            console.log("The second button is clicked")
+        }
+        function itChanged() {
+            console.log("It changed")
+        }
+
+    </script>
+</head>
+<body onload="helloNumber()">
+<button type="button" onclick="buttonClicked()">
+    The one and only Button
+</button>
+<button type="button" onclick="secondButtonClicked()">
+    The second button
+</button>
+
+<label>
+    <input id="theField" type="text" oninput="itChanged()">
+</label>
+</body>
+</html>

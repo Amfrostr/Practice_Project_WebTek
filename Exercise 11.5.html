@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice site</title>
+    <style>
+        #loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+               transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script type="application/javascript" defer>
+        let request = new XMLHttpRequest;
+        request.onload = printOut;
+
+        function getDice() {
+            request.open("GET", "https://web-tek.ninja/php_backend/delayed_dice.php");
+            request.send()
+            startLoading()
+        }
+        function printOut() {
+            hideLoader()
+            document.getElementById("result").textContent = request.responseText
+        }
+        function startLoading() {
+            document.getElementById("loader").style.visibility = "visible";
+        }
+        function hideLoader() {
+            document.getElementById("loader").style.visibility = "hidden";
+        }
+    </script>
+</head>
+<body onload="hideLoader()">
+<div>
+    <button type="button" onclick="getDice()">Throw a die</button>
+    <p>You Threw: </p><p id="result">Nada</p>
+</div>
+<div id="loader"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice site</title>
+    <script type="application/javascript">
+        let request = new XMLHttpRequest;
+        request.onload = printOut;
+
+        function getDice() {
+            request.open("GET", "https://web-tek.ninja/php_backend/throw_a_dice.php");
+            request.send()
+        }
+        function printOut() {
+            document.getElementById("result").textContent = request.responseText
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <button type="button" onclick="getDice()">Throw a die</button>
+    <p>You Threw: </p><p id="result">Nada</p>
+</div>
+</body>
+</html>

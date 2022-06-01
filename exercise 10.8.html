@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function startup() {
+            document.getElementsByClassName("yellow")[0].style.fontFamily = "Courier New"
+        }
+        //returns a list, therefore you choose element with [index] before applying style
+        function makeYellow() {
+            document.getElementsByClassName("yellow")[0].style.backgroundColor = "yellow"
+        }
+        function removeYellow() {
+            document.getElementsByClassName("yellow")[0].style.backgroundColor = "white"
+        }
+    </script>
+</head>
+<body onload="startup()">
+
+<p class="yellow">
+  This is one paragraph of text
+</p>
+
+<button onclick="makeYellow()">
+    Click to make text Yellow
+</button>
+
+<button onclick="removeYellow()">
+    Click to remove yellow text
+</button>
+</body>
+</html>

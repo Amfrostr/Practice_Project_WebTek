@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function changeHeading() {
+            document.getElementById("para").innerText = "Hello"
+        }
+        function helloNumber() {
+            let count = 0;
+            setInterval(increment, 1000)
+
+            function increment() {
+                document.getElementById("counter").innerText = count + " seconds have passed since the page was loaded"
+                count++
+            }
+        }
+        function calculate() {
+            let a = document.getElementById("A").value
+            let b = document.getElementById("B").value
+
+            document.getElementById("result").innerText = "The two numbers multiplied are " + a * b
+        }
+    </script>
+</head>
+<body onload="changeHeading(), helloNumber(), calculate()">
+<p id="para">
+    Loading...
+</p>
+<p id="counter">
+    Counter
+</p>
+<label>
+    <input id="A" type="text" value = "3" oninput="calculate()">
+    <input id="B" type="text" value = "5" oninput="calculate()">
+</label>
+<p id="result">
+    Result:
+</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" >
+        function changeColour(colour) {
+            document.getElementById("fColour").innerText = colour
+        }
+    </script>
+</head>
+<body onload=changeColour("red")>
+
+<label class="colourText">
+    Choose your favourite colour!
+</label>
+
+<select name="colours" id="chooser">
+    <option value="Red">Red</option>
+    <option value="Blue">Blue</option>
+</select>
+
+<p class="container">
+    I see that your favourite colour is <span id="fColour">...</span>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        let counter = 0
+        function createChild() {
+            let paragraph = document.createElement("p")
+            let textNode = document.createTextNode("Hello! " + counter)
+
+            paragraph.appendChild(textNode)
+            counter++
+
+            document.getElementById("theDiv").appendChild(paragraph)
+        }
+        function removeChild() {
+            let doc = document.getElementById("theDiv")
+            if(doc.hasChildNodes()) {
+                document.getElementById("theDiv").parentNode.removeChild(document.getElementById("theDiv").lastChild)
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="ok" onclick="createChild()">
+    Add
+</button>
+<button id="notOk" onclick="removeChild()">
+    Delete
+</button>
+<div id="theDiv">
+
+</div>
+</body>
+</html>
